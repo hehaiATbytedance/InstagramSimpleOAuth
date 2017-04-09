@@ -20,7 +20,6 @@
 //WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <SimpleOAuth2/SimpleOAuth2.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 #import "InstagramSimpleOAuthViewController.h"
 #import "InstagramConstants.h"
 #import "InstagramAuthenticationManager.h"
@@ -36,6 +35,7 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 
 @property (weak, nonatomic) IBOutlet UIWebView *instagramWebView;
 @property (strong, nonatomic) InstagramAuthenticationManager *instagramAuthenticationManager;
+@property (nonatomic, getter=isLoading) BOOL loading;
 
 @end
 
@@ -199,14 +199,16 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 
 - (void)showProgressHUD
 {
-    [MBProgressHUD showHUDAddedTo:self.view
-                         animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view
+//                         animated:YES];
+    self.loading = YES;
 }
 
 - (void)hideProgressHUD
 {
-    [MBProgressHUD hideHUDForView:self.view
-                         animated:YES];
+//    [MBProgressHUD hideHUDForView:self.view
+//                         animated:YES];
+    self.loading = NO;
 }
 
 @end

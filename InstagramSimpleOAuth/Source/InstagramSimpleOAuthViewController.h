@@ -29,6 +29,7 @@
 @property (copy, nonatomic) void (^completion)(InstagramLoginResponse *response, NSError *error);
 @property (nonatomic) BOOL shouldShowErrorAlert;
 @property (strong, nonatomic) NSArray *permissionScope;
+@property (nonatomic, readonly, getter=isLoading) BOOL loading;
 
 - (instancetype)initWithClientID:(NSString *)clientID
                     clientSecret:(NSString *)clientSecret

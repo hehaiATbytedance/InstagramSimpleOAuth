@@ -12,9 +12,7 @@ Pod::Spec.new do |s|
   s.public_header_files   = 'InstagramSimpleOAuth/Source/InstagramSimpleOAuth.h',   'InstagramSimpleOAuth/Source/InstagramSimpleOAuthViewController.h',
                             'InstagramSimpleOAuth/Source/InstagramLoginResponse.h', 'InstagramSimpleOAuth/Source/InstagramUser.h'
   s.source_files          = 'InstagramSimpleOAuth/Source/*.{h,m}'
-  s.resources             = 'InstagramSimpleOAuth/Source/*.xib'
   s.frameworks            = 'Foundation', 'UIKit'
 
   s.dependency 'SimpleOAuth2', '0.0.3'
-  s.dependency 'MBProgressHUD', '~> 0.9'
 end
