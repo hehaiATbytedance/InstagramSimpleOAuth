@@ -16,7 +16,6 @@
 		9460A8D91C72B1DD00DDE4A2 /* JustAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9460A8D41C72B1DD00DDE4A2 /* JustAViewController.xib */; };
 		9491BD811C78C6D6001154E3 /* FakeSimpleOAuth2AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9491BD801C78C6D6001154E3 /* FakeSimpleOAuth2AuthenticationManager.m */; };
 		9494E5EC1C74B7A30032CC95 /* InstagramAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA846A019B0054B0035A004 /* InstagramAuthenticationManager.m */; };
-		AF0431D019945F44000C7B6D /* InstagramSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0431CF19945F44000C7B6D /* InstagramSimpleOAuthViewController.xib */; };
 		AF04B70A19B0330B004BF65D /* FakeInstagramAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF04B70919B0330B004BF65D /* FakeInstagramAuthenticationManager.m */; };
 		AF407E381993BFA700F61872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF407E371993BFA700F61872 /* Foundation.framework */; };
 		AF407E3A1993BFA700F61872 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF407E391993BFA700F61872 /* CoreGraphics.framework */; };
@@ -68,7 +67,6 @@
 		9491BD7F1C78C6D6001154E3 /* FakeSimpleOAuth2AuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleOAuth2AuthenticationManager.h; sourceTree = "<group>"; };
 		9491BD801C78C6D6001154E3 /* FakeSimpleOAuth2AuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleOAuth2AuthenticationManager.m; sourceTree = "<group>"; };
 		A20A6119B8DE699C5A8168A7 /* Pods-InstagramSimpleOAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSimpleOAuth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramSimpleOAuth/Pods-InstagramSimpleOAuth.debug.xcconfig"; sourceTree = "<group>"; };
-		AF0431CF19945F44000C7B6D /* InstagramSimpleOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstagramSimpleOAuthViewController.xib; path = Source/InstagramSimpleOAuthViewController.xib; sourceTree = "<group>"; };
 		AF04B70819B0330B004BF65D /* FakeInstagramAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeInstagramAuthenticationManager.h; sourceTree = "<group>"; };
 		AF04B70919B0330B004BF65D /* FakeInstagramAuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeInstagramAuthenticationManager.m; sourceTree = "<group>"; };
 		AF27E95A19B83CD70060DA91 /* InstagramSimpleOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramSimpleOAuth.h; path = Source/InstagramSimpleOAuth.h; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				AF793E7C19AEF6E2008C3656 /* InstagramConstants.m */,
 				AF753F551993C37F007C8B1B /* InstagramSimpleOAuthViewController.h */,
 				AF753F561993C37F007C8B1B /* InstagramSimpleOAuthViewController.m */,
-				AF0431CF19945F44000C7B6D /* InstagramSimpleOAuthViewController.xib */,
 				AF66544119AB7BF1004D2DAE /* InstagramLoginResponse.h */,
 				AF66544219AB7BF1004D2DAE /* InstagramLoginResponse.m */,
 				AF66544719AB80E7004D2DAE /* InstagramUser.h */,
@@ -388,7 +385,6 @@
 			files = (
 				9460A8D91C72B1DD00DDE4A2 /* JustAViewController.xib in Resources */,
 				AF407E531993BFA700F61872 /* Images.xcassets in Resources */,
-				AF0431D019945F44000C7B6D /* InstagramSimpleOAuthViewController.xib in Resources */,
 				9460A8D71C72B1DD00DDE4A2 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		959A93064F447F81F00BAAB4 /* [CP] Check Pods Manifest.lock */ = {
@@ -460,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C22327C8009CCE4176FAC6B6 /* [CP] Copy Pods Resources */ = {

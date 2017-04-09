@@ -71,6 +71,23 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 }
 
 #pragma mark - View Lifecycle
+    
+- (void)viewDidLoad
+{
+    UIWebView *instagramWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    instagramWebView.delegate = self;
+    [self.view addSubview:instagramWebView];
+    NSLayoutConstraint *contraint1 = [NSLayoutConstraint constraintWithItem:instagramWebView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *contraint2 = [NSLayoutConstraint constraintWithItem:instagramWebView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    NSLayoutConstraint *contraint3 = [NSLayoutConstraint constraintWithItem:instagramWebView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+    NSLayoutConstraint *contraint4 = [NSLayoutConstraint constraintWithItem:instagramWebView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+    NSArray *array = [NSArray arrayWithObjects:contraint1, contraint2, contraint3, contraint4, nil];
+    [self.view addConstraints:array];
+    
+    self.instagramWebView = instagramWebView;
+    
+    [super viewDidLoad];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

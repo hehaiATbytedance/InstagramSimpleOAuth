@@ -32,7 +32,7 @@ DEPENDENCIES:
   - Expecta (= 1.0.5)
   - MBProgressHUD (~> 0.9)
   - OCMock (= 3.2.2)
-  - SimpleOAuth2 (= 0.0.3)
+  - SimpleOAuth2 (~> 0.0.3)
   - Specta (= 1.0.5)
   - Swizzlean (= 0.2.0)
 
@@ -45,6 +45,6 @@ SPEC CHECKSUMS:
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
   Swizzlean: 6ef3e5a33063b7cd99dc39f8c55164dc55d9a021
 
-PODFILE CHECKSUM: 2a0545353ff7ccef8124f96b3d488ce279a10feb
+PODFILE CHECKSUM: 8d8cd2be57896a5e1166092fd4119fae29a637f6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0
